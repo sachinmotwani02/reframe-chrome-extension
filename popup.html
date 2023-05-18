@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Water Popup</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+      @font-face {
+        font-family: satoshi-m;
+        src: url(font/Satoshi-Medium.otf);
+      }
+      @font-face {
+        font-family: satoshi-r;
+        src: url(font/Satoshi-Regular.otf);
+      }
+      @font-face {
+        font-family: satoshi-b;
+        src: url(font/Satoshi-Bold.otf);
+      }
+      body {
+        font-family: satoshi-r;
+        /* text-align: center; */
+        width: 420px;
+        padding: 25px;
+        /* background-color: #fbfbfb; */
+      }
+
+      h1{
+        font-family: satoshi-b;
+        font-size: large;
+      }
+
+      button {
+        /* margin: 5px; */
+        /* width: 80px; */
+        /* padding: 10px; */
+        outline: none;
+      }
+
+      #box{
+        margin-top: 15px;
+      }
+
+      .loading{
+        margin-top: 12px;
+        margin-left: 6px;
+      }
+
+      .suggestions{
+        transition: all 600s ease-in;
+        display: block;
+      }
+
+      label{
+        margin-right: 18px;
+      }
+
+      #getSuggestion{
+        margin-left: 8px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      #text{
+        font-size: medium;
+        margin-top: 15px;
+      }
+
+      #select{
+        font-size: small;
+        /* font-weight: 600; */
+      }
+
+      #final{
+        background-color: #f1f1f1;
+        display: inline-block;
+        font-size: large;
+        /* font-family: satoshi-m; */
+      }
+
+      #replace{
+        text-decoration: none;
+      }
+
+      #emojify{
+        text-decoration: none;
+      }
+
+      #contain{
+        margin-top: 20px;
+      }
+      
+      .alert {
+        padding: 20px;
+        background-color: #bdbdbd;
+        color: white;
+      }
+
+      p{
+        margin-bottom: 10px;
+      }
+
+      #copy{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #copied{
+        position: absolute;
+        right: 35px;
+        bottom: 25px;
+      }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files
+     -->
+  </head>
+<body>
+    <div class="d-flex justify-content-between align-items-center">
+      <h1>Hello there!<span>👋</span></h1>
+      <img src="R.png" alt="reframe logo" width="30" height="" class="ml-12"/>
+    </div>
+    <p id="text">Welcome to Reframe, click on the 'Get Text' button to fetch the input text and get suggesstions.</p>
+    <button type="button" class="btn btn-light btn-md" id="getData">Get Text</button>
+    <button type="button" class="btn btn-light btn-md" id="getSuggestion">Generate Suggestion</button>
+
+    <div id="contain">
+      <p id="select">Select Tone (any one)</p>
+      <div id="box">
+        <input class="form-check-input" type="checkbox" value="Professional" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Professional
+        </label>
+        <input class="form-check-input" type="checkbox" value="Casual" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Casual
+        </label>
+        <input class="form-check-input" type="checkbox" value="Humorous" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Humorous
+        </label>
+      </div>
+
+      <div id="box">
+        <input class="form-check-input" type="checkbox" value="Sarcastic" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Sarcastic
+        </label>
+        <input class="form-check-input" type="checkbox" value="Enthusistic" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Enthusistic
+        </label>
+        <input class="form-check-input" type="checkbox" value="Poetic" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Poetic
+        </label>
+      </div>
+    </div>
+      <!-- <div class="spinner-grow spinner-grow-md text-primary" id="loader" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div> -->
+      <div id="loader">
+        <p class="placeholder-glow suggestions mt-4">
+          <span class="placeholder col-11 placeholder-lg"></span>
+          <!-- <span class="placeholder col-8 placeholder-lg"></span> -->
+        </p>
+        <p class="placeholder-glow suggestions">
+          <span class="placeholder col-11 placeholder-lg"></span>
+        </p>
+      </div>
+      <p id="final" class="mt-4 suggestion"></p>
+      
+      <div id="copy">
+        <p><a id="emojify" class="link" href="#"><span>🔥</span>Emojify</a></p>
+        <p><a id="replace" class="link" href="#"><span>📋</span>Copy to clipboard</a></p>
+        <p id="copied"><span>✔️</span>Copied</p>
+      </div>
+      
+    <!-- <button id="no">No</button> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

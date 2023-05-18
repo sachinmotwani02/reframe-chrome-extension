@@ -1,0 +1,23 @@
+{
+  "name": "Reframe",
+  "version": "1.0",
+  "description": "Improve your message with Reframe, select tones, fetch your message and you're good to go.",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "action": {
+    "default_title": "myPopup",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "logo/16p.png",
+    "32": "logo/32p.png",
+    "48": "logo/48p.png",
+    "128": "logo/128p.png"
+  },
+  "content_scripts": [
+    {
+        "matches": ["https://web.whatsapp.com/","https://mail.google.com/"],
+        "js": ["contentScript.js"]
+    }
+]
+}
