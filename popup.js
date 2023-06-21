@@ -62,7 +62,7 @@ function getSuggesion() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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'
+      'Authorization':
     },
     body: JSON.stringify({
       'model': 'text-davinci-003',
@@ -107,7 +107,7 @@ function emojify() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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'
+      'Authorization': 
     },
     body: JSON.stringify({
       'model': 'text-davinci-003',
